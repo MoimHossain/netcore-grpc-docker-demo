@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\transport-logistics\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj": {}
+    "C:\\Git\\MoimHossain\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj": {}
   },
   "projects": {
-    "C:\\Git\\transport-logistics\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj": {
+    "C:\\Git\\MoimHossain\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\transport-logistics\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj",
+        "projectUniqueName": "C:\\Git\\MoimHossain\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj",
         "projectName": "NetcoreConsole",
-        "projectPath": "C:\\Git\\transport-logistics\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj",
+        "projectPath": "C:\\Git\\MoimHossain\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\NetcoreConsole.csproj",
         "packagesPath": "C:\\Users\\Moim_\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\transport-logistics\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\obj\\",
+        "outputPath": "C:\\Git\\MoimHossain\\netcore-grpc-docker-demo\\netcore-console-app\\NetcoreConsole\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -33,8 +33,7 @@
           "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
           "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
           "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {},
-          "https://transport-logistics.pkgs.visualstudio.com/_packaging/MaerskTigers/nuget/v3/index.json": {}
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
@@ -50,6 +49,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.11.5, )"
+            },
             "Google.Protobuf": {
               "target": "Package",
               "version": "[3.9.1, )"

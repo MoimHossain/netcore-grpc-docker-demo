@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace NetcoreConsole
 {
-    class Program
+    public class Program
     {
         private static int DEFAULTPORT = 7888;
         private static int PORT = 7888;
@@ -82,20 +82,25 @@ namespace NetcoreConsole
                         }
                     }
 
-                    var sw = Stopwatch.StartNew();
-                    for (var x = 0; x < count; ++x)
-                    {
-                        var empName = client.GetEmployeeName(new EmployeeNameRequest { EmpId = "1" });
-                        Console.CursorTop = 6;
-                        Console.CursorLeft = 0;
-                        Console.WriteLine("Iteration count: {0,22:D8}", x + 1);
-                    }
-                    sw.Stop();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Elapsed Milliseconds: ");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(sw.ElapsedMilliseconds);
-                    Console.ResetColor();
+                    accClient = client;
+                    perfCount = count;
+
+                    BenchmarkDotNet.Running.BenchmarkRunner.Run<Program>();
+
+                    //var sw = Stopwatch.StartNew();
+                    //for (var x = 0; x < count; ++x)
+                    //{
+                    //    var empName = client.GetEmployeeName(new EmployeeNameRequest { EmpId = "1" });
+                    //    Console.CursorTop = 6;
+                    //    Console.CursorLeft = 0;
+                    //    Console.WriteLine("Iteration count: {0,22:D8}", x + 1);
+                    //}
+                    //sw.Stop();
+                    //Console.ForegroundColor = ConsoleColor.Yellow;
+                    //Console.Write("Elapsed Milliseconds: ");
+                    //Console.ForegroundColor = ConsoleColor.Green;
+                    //Console.WriteLine(sw.ElapsedMilliseconds);
+                    //Console.ResetColor();
 
                     if (!withArgs)
                     {
@@ -111,6 +116,18 @@ namespace NetcoreConsole
                 Console.WriteLine($"Exception encountered: {ex}");
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey(intercept: true);
+            }
+        }
+
+        private static AccountService.AccountServiceClient accClient;
+        private static int perfCount = 0;
+
+        [BenchmarkDotNet.Attributes.Benchmark]
+        public void RunBenchmark()
+        {
+            for (var x = 0; x < perfCount; ++x)
+            {
+                var empName = accClient.GetEmployeeName(new EmployeeNameRequest { EmpId = "1" });
             }
         }
 

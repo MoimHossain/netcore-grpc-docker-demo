@@ -2,6 +2,7 @@
 #For more information, please see https://aka.ms/containercompat
 
 FROM mcr.microsoft.com/dotnet/core/runtime:3.0-nanoserver-1809 AS base
+EXPOSE 7888
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-nanoserver-1809 AS build
